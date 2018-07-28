@@ -30,3 +30,5 @@ RUN while read -r package; do PACKAGES="${PACKAGES}${package} "; done < ./packag
     ${ANDROID_HOME}/tools/bin/sdkmanager ${PACKAGES}
 
 RUN npm install -g cordova
+
+RUN npm install --save-dev ci-publish
