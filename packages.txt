@@ -2,3 +2,4 @@ build-tools;33.0.2
 platforms;android-33
 platform-tools
 ndk:23.1.7779620
+cmake:3.10.2
