@@ -2,8 +2,8 @@ FROM ubuntu:22.04
 
 MAINTAINER behdad222 <behdad.222@gmail.com>
 
-ARG GRADLE_VERSION=7.5
-ARG SDK_TOOLS_VERSION=9477386
+ARG GRADLE_VERSION=8.0
+ARG SDK_TOOLS_VERSION=10406996
 ARG DEBIAN_FRONTEND=noninteractive
 
 ENV ANDROID_HOME "/android-sdk-linux"
@@ -11,7 +11,7 @@ ENV PATH "$PATH:${ANDROID_HOME}/tools:/opt/gradle/gradle-${GRADLE_VERSION}/bin"
 
 RUN apt-get update \
 	&& apt-get upgrade -y \
-	&& apt-get install -y git jq wget unzip curl zip openjdk-11-jdk \
+	&& apt-get install -y git jq wget unzip curl zip openjdk-17-jdk \
 	&& apt-get clean
 
 RUN wget --output-document=gradle-${GRADLE_VERSION}-all.zip https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-all.zip \
