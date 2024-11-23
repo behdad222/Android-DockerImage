@@ -4,6 +4,7 @@ MAINTAINER behdad222 <behdad.222@gmail.com>
 
 ARG GRADLE_VERSION=8.9
 ARG SDK_TOOLS_VERSION=11076708
+ARG SENTRY_CLI_VERSION=2.38.2
 ARG DEBIAN_FRONTEND=noninteractive
 
 ENV ANDROID_HOME "/android-sdk-linux"
@@ -23,7 +24,9 @@ RUN wget --output-document=gradle-${GRADLE_VERSION}-all.zip https://downloads.gr
         && unzip ./android-sdk.zip -d ${ANDROID_HOME} \
         && rm ./android-sdk.zip \
         && mkdir -p ~/.android \
-        && touch ~/.android/repositories.cfg
+        && touch ~/.android/repositories.cfg \ 
+        && wget --output-document=/usr/local/bin/sentry-cli https://github.com/getsentry/sentry-cli/releases/download/${SENTRY_CLI_VERSION}/sentry-cli-Linux-x86_64 \
+        && chmod +x /usr/local/bin/sentry-cli
 
 RUN yes | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --licenses \
         && ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --update
