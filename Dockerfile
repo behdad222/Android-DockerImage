@@ -12,7 +12,7 @@ ENV PATH "$PATH:${ANDROID_HOME}/tools:/opt/gradle/gradle-${GRADLE_VERSION}/bin"
 
 RUN apt-get update \
 	&& apt-get upgrade -y \
-	&& apt-get install -y git jq wget unzip curl zip openjdk-17-jdk \
+	&& apt-get install -y git jq wget unzip curl zip openjdk-21-jdk \
 	&& apt-get clean
 
 RUN wget --output-document=gradle-${GRADLE_VERSION}-all.zip https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-all.zip \
