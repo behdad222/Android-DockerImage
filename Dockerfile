@@ -8,7 +8,7 @@ ARG SENTRY_CLI_VERSION=2.46.0
 ARG WEBP_VERSION=1.5.0
 ARG SVG2VECTOR=1.0.2
 ARG DEBIAN_FRONTEND=noninteractive
-https://github.com/eitanliu/svg2vector/releases/download/1.0.2/svg2vector-1.0.2.tar
+
 ENV ANDROID_HOME "/android-sdk-linux"
 ENV PATH "$PATH:${ANDROID_HOME}/tools:/opt/gradle/gradle-${GRADLE_VERSION}/bin:opt/webp/bin"
 
