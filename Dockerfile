@@ -36,7 +36,7 @@ RUN wget --output-document=gradle-${GRADLE_VERSION}-all.zip https://downloads.gr
 	&& wget --output-document=svg2vector.tar https://github.com/eitanliu/svg2vector/releases/download/${SVG2VECTOR}/svg2vector-${SVG2VECTOR}.tar \
         && tar xvf svg2vector.tar \
         && rm svg2vector.tar \
-	&& mv svg2vector* /opt/svg2vector \
+	&& mv svg2vector* /opt/svg2vector 
 	
 RUN svg2vector -h
 RUN cwebp -h
