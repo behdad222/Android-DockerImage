@@ -35,8 +35,8 @@ RUN wget --output-document=gradle-${GRADLE_VERSION}-all.zip https://downloads.gr
         && rm webp.tar.gz \
 	&& wget --output-document=svg2vector.tar https://github.com/eitanliu/svg2vector/releases/download/${SVG2VECTOR}/svg2vector-${SVG2VECTOR}.tar \
         && tar xvf svg2vector.tar \
-	&& mv svg2vector* /opt/svg2vector \
         && rm svg2vector.tar \
+	&& mv svg2vector* /opt/svg2vector \
 	
 
 RUN yes | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --licenses \
