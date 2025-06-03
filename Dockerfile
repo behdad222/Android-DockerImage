@@ -38,12 +38,5 @@ RUN wget --output-document=gradle-${GRADLE_VERSION}-all.zip https://downloads.gr
         && rm svg2vector.tar \
 	&& mv svg2vector* /opt/svg2vector 
 	
-RUN svg2vector -h
 RUN cwebp -h
-
-RUN yes | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --licenses \
-        && ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --update
-
-ADD packages.txt .
-RUN while read -r package; do PACKAGES="${PACKAGES}${package} "; done < ./packages.txt && \
-    ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} ${PACKAGES}
+RUN svg2vector -h
