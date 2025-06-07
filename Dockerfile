@@ -10,7 +10,7 @@ ARG SVG2VECTOR=1.0.2
 ARG DEBIAN_FRONTEND=noninteractive
 
 ENV ANDROID_HOME "/android-sdk-linux"
-ENV PATH "$PATH:${ANDROID_HOME}/tools:/opt/gradle/gradle-${GRADLE_VERSION}/bin:opt/webp/bin:opt/svg2vector/bin"
+ENV PATH "$PATH:${ANDROID_HOME}/tools:/opt/gradle/gradle-${GRADLE_VERSION}/bin:/opt/webp/bin:/opt/svg2vector/bin"
 
 RUN apt-get update \
 	&& apt-get upgrade -y \
